@@ -6,6 +6,7 @@ from tensorflow import keras
 from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.applications.xception import preprocess_input
 import os
+from skimage.transform import resize
 #Classes to predict
 classes = [
     'dress',
@@ -41,9 +42,11 @@ def predict_class(image):
     #path = f'./{uploaded_file.name}'
     #img = load_img(path, target_size=(299, 299))
  
-
+    image = np.asarray(image)/255
+    
+    my_image= resize(image, (299,299)).reshape((1, 299*299*3)).T
     #preprocessing the test picture
-    x = np.array(image)
+    x = np.array(my_image)
     X = np.array([x])
     X = preprocess_input(X)
 
