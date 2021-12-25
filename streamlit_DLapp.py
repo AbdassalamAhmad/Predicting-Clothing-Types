@@ -47,7 +47,7 @@ def predict_class(uploaded_file):
  
 
     #preprocessing the test picture
-    x = np.array(uploaded_file)
+    x = np.array(uploaded_file.read())
     X = np.array([x])
     X = preprocess_input(X)
 
