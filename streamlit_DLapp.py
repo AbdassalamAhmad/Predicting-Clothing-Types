@@ -25,13 +25,6 @@ model = keras.models.load_model("xception_v5_1_10_0.889.h5")
 
 
 def main():
-    if st.checkbox('Select a file in current directory'):
-        folder_path = '.'
-        if st.checkbox('Change directory'):
-            folder_path = st.text_input('Enter folder path', '.')
-        filename = file_selector(folder_path=folder_path)
-        st.write('You selected `%s`' % filename)
-        img = load_img(filename, target_size=(150,150,3))
     uploaded_file = st.file_uploader("Choose a picture to predict its class", type=['jpg', 'jpeg', 'png'])
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
@@ -49,12 +42,12 @@ def file_selector(folder_path='.'):
 
 def predict_class(uploaded_file):
     #loading the test picture
-    path = f'./{uploaded_file.name}'
-    img = load_img(path, target_size=(299, 299))
+    #path = f'./{uploaded_file.name}'
+    #img = load_img(path, target_size=(299, 299))
  
 
     #preprocessing the test picture
-    x = np.array(img)
+    x = np.array(uploaded_file)
     X = np.array([x])
     X = preprocess_input(X)
 
