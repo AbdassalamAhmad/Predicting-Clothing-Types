@@ -21,7 +21,7 @@ classes = [
 ]
 
 #loading the model
-model = keras.models.load_model('./xception_v5_1_10_0.889.h5',compile=False)
+model = keras.models.load_model("")
 
 
 def main():
