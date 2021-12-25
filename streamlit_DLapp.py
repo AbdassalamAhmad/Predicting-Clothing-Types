@@ -30,24 +30,20 @@ def main():
         image = Image.open(uploaded_file)
         st.image(image, caption='Sunrise by the mountains')
         if st.button("Predict Class"):
-            result=predict_class(uploaded_file)
+            result=predict_class(image)
             st.write(result)
         #st.success(result)
     
 
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
 
-def predict_class(uploaded_file):
+def predict_class(image):
     #loading the test picture
     #path = f'./{uploaded_file.name}'
     #img = load_img(path, target_size=(299, 299))
  
 
     #preprocessing the test picture
-    x = np.array(uploaded_file.read())
+    x = np.array(image.read())
     X = np.array([x])
     X = preprocess_input(X)
 
