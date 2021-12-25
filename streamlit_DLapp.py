@@ -5,7 +5,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.applications.xception import preprocess_input
-
+import os
 #Classes to predict
 classes = [
     'dress',
@@ -25,6 +25,13 @@ model = keras.models.load_model("xception_v5_1_10_0.889.h5")
 
 
 def main():
+    if st.checkbox('Select a file in current directory'):
+        folder_path = '.'
+        if st.checkbox('Change directory'):
+            folder_path = st.text_input('Enter folder path', '.')
+        filename = file_selector(folder_path=folder_path)
+        st.write('You selected `%s`' % filename)
+        img = load_img(filename, target_size=(150,150,3))
     uploaded_file = st.file_uploader("Choose a picture to predict its class", type=['jpg', 'jpeg', 'png'])
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
@@ -34,6 +41,11 @@ def main():
             st.write(result)
         #st.success(result)
     
+
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
 
 def predict_class(uploaded_file):
     #loading the test picture
