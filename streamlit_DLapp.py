@@ -37,7 +37,7 @@ def main():
 
 def predict_class(uploaded_file):
     #loading the test picture
-    path = f'{uploaded_file.name}'
+    path = f'./{uploaded_file.name}'
     img = load_img(path, target_size=(299, 299))
  
 
