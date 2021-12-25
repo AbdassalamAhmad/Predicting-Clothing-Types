@@ -1,14 +1,13 @@
 # Predicting-Clothing-Types
 Predicting 10 different clothing types using Xception pre-trained model from Keras library.
-
-it is reimplemented version from [lesson 8-deep learning](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/08-deep-learning) held by [DataTalksClub](https://datatalks.club/).
+It is reimplemented version from [lesson 8-deep learning](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/08-deep-learning) held by [DataTalksClub](https://datatalks.club/).
 
 ## About the Dataset
-### Data Source
+#### Data Source
 I use the dataset from here:
 https://github.com/alexeygrigorev/clothing-dataset-small
 
-### Dataset Information
+#### Dataset Information
 This is a small dataset contains 10 different clothing types (dress, hat, longsleeve, outwear, pants, shirt, shoes, shorts, skirt, t-shirt).
 
 ## Short Description of the Files
@@ -48,3 +47,8 @@ pipenv install
 streamlit run streamlit_DLapp.py
 ```
 5.2. on the web: check the [documentation](https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app) from official website.  
+
+## Note
+If you like my project, I appreciate you starring this repo. Please feel free to fork the content and contact me if you have any questions.
+
+[my linkedIn account](https://www.linkedin.com/in/abdassalam-ahmad/)
