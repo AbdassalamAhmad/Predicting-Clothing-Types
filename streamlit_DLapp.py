@@ -40,17 +40,13 @@ def predict_class(image):
     #loading the test picture
     #path = f'./{uploaded_file.name}'
     #img = load_img(path, target_size=(299, 299))
- 
-    # Create the array of the right shape to feed into the keras model
-    data = np.ndarray(shape=(1, 299, 299, 3), dtype=np.float32)
+    
+    #preprocessing the test picture
     #image sizing
     size = (299, 299)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
-
     #turn the image into a numpy array
     image_array = np.asarray(image)
-    #preprocessing the test picture
-    #x = np.array(image_array)
     X = np.array([image_array])
     X = preprocess_input(X)
 
