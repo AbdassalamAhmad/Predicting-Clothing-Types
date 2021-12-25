@@ -21,7 +21,7 @@ classes = [
 ]
 
 #loading the model
-model = keras.models.load_model(".")
+model = keras.models.load_model("./.h5")
 
 
 def main():
