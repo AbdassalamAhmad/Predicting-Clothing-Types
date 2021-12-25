@@ -43,7 +43,7 @@ def predict_class(image):
  
 
     #preprocessing the test picture
-    x = np.array(image.read())
+    x = np.array(image)
     X = np.array([x])
     X = preprocess_input(X)
 
