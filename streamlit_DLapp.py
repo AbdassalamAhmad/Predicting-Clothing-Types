@@ -6,7 +6,6 @@ from tensorflow import keras
 from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.applications.xception import preprocess_input
 import os
-from skimage.transform import resize
 #Classes to predict
 classes = [
     'dress',
