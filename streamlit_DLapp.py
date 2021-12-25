@@ -4,6 +4,7 @@ from PIL import Image# to read & resize the image
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.applications.xception import preprocess_input
+
 #Classes to predict
 classes = [
     'dress',
@@ -23,25 +24,19 @@ model = keras.models.load_model("xception_v5_1_10_0.889.h5")
 
 
 def main():
-    uploaded_file = st.file_uploader("Choose a picture to predict its class", type=['jpg', 'jpeg', 'png'])
+    st.title("Predicting Clothing Types Project")
+    uploaded_file = st.file_uploader("Upload a picture to predict its class", type=['jpg', 'jpeg', 'png'])
     if uploaded_file is not None:
+        st.title("Here is the image you've uploded")
         image = Image.open(uploaded_file)
-        st.image(image, caption='Sunrise by the mountains')
+        st.image(image)
         if st.button("Predict Class"):
             result=predict_class(image)
             st.write(result)
         #st.success(result)
     
 
-
 def predict_class(image):
-    '''size = (299, 299)
-    image = ImageOps.fit(image, size, Image.ANTIALIAS)
-    #turn the image into a numpy array
-    image_array = np.asarray(image)
-    X = np.array([image_array])
-    X = preprocess_input(X)
-    '''
     #preprocessing the test picture
     #image sizing
     test_image = image.resize((299,299))
@@ -55,9 +50,6 @@ def predict_class(image):
     max_key = max(pre_result, key=pre_result.get)
     result = "your picture contains {} ".format(max_key)
     return (result)
-
-
-
 
 if __name__=='__main__':
     main()
