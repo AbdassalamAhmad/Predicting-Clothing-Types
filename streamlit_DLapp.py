@@ -1,11 +1,9 @@
 import numpy as np
 import streamlit as st
-from PIL import Image, ImageOps# to read the image 
+from PIL import Image# to read & resize the image 
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.applications.xception import preprocess_input
-import os
 #Classes to predict
 classes = [
     'dress',
@@ -50,7 +48,7 @@ def predict_class(image):
     image_array = np.asarray(test_image)
     X = np.array([image_array])#because the next function expects a list.
     X = preprocess_input(X)
-    
+
     #predicting
     pred = model.predict(X)
     pre_result = dict(zip(classes, pred[0]))
