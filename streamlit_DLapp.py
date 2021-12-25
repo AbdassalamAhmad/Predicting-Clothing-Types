@@ -37,12 +37,6 @@ def main():
 
 
 def predict_class(image):
-    #loading the test picture
-    #path = f'./{uploaded_file.name}'
-    #img = load_img(path, target_size=(299, 299))
-    
-    #preprocessing the test picture
-    #image sizing
     '''size = (299, 299)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
     #turn the image into a numpy array
@@ -50,11 +44,13 @@ def predict_class(image):
     X = np.array([image_array])
     X = preprocess_input(X)
     '''
-
+    #preprocessing the test picture
+    #image sizing
     test_image = image.resize((299,299))
     image_array = np.asarray(test_image)
-    X = np.array([image_array])
+    X = np.array([image_array])#because the next function expects a list.
     X = preprocess_input(X)
+    
     #predicting
     pred = model.predict(X)
     pre_result = dict(zip(classes, pred[0]))
