@@ -2,6 +2,9 @@
 Predicting 10 different clothing types using Xception pre-trained model from Keras library.
 It is reimplemented version from [lesson 8-deep learning](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/08-deep-learning) held by [DataTalksClub](https://datatalks.club/).
 
+
+## Model Demo
+![Model Demo](https://github.com/AbdassalamAhmad/Predicting-Clothing-Types/blob/main/predicting-clothing-types.gif)
 ## About the Dataset
 #### Data Source
 I use the dataset from here:
@@ -24,7 +27,7 @@ This is a small dataset contains 10 different clothing types (dress, hat, longsl
 2. Upload an image from test dataset or any image from your device that has one clothing type.
 3. click on Predict Class button.
 
-Note: watch this [video](https://vimeo.com/660125714/22a8430d76) to see the model in action
+Note: watch this [video](https://vimeo.com/660210768/f434e41c32) to see the model in action
 
 
 ## How to reproduce this model
