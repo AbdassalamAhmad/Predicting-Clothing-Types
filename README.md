@@ -14,7 +14,12 @@ https://github.com/alexeygrigorev/clothing-dataset-small
 This is a small dataset contains 10 different clothing types (dress, hat, longsleeve, outwear, pants, shirt, shoes, shorts, skirt, t-shirt).
 
 ## Short Description of the Files
-1. []()
+1. [training-final-dlmodel.ipynb](https://github.com/AbdassalamAhmad/Predicting-Clothing-Types/blob/main/training-final-dlmodel.ipynb) -
+* used transfer learning to get Xception model pretrained on Imagnet.
+* freeze its CNN layers and train the dense layers.
+* used callbacks to save the best model over multiple epochs.
+* did some data augmentation to prevent overfitting and generalize our model.
+* Evalutaing the model, Aciheved 90% accuracy.
 
 2. [streamlit_DLapp.py](https://github.com/AbdassalamAhmad/Predicting-Clothing-Types/blob/main/streamlit_DLapp.py) It deploy the trained model to streamlit cloud 
 
