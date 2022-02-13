@@ -1,3 +1,5 @@
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/abdassalamahmad/predicting-clothing-types/main/streamlit_DLapp.py)
+
 # Predicting-Clothing-Types
 Predicting 10 different clothing types using Xception pre-trained model from Keras library.
 It is reimplemented version from [lesson 8-deep learning](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/08-deep-learning) held by [DataTalksClub](https://datatalks.club/).
